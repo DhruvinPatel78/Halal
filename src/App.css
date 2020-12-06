@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+.sider.ant-layout-sider-children {
+  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+
+}
+.customHeader.ant-layout-header{
+  background-color: #364f2a;
+}
+
+.ant-pagination-item a {
+  margin-top: 0px;
+}
+.ant-btn-primary {
+  background-color: #364f2a !important;
+  border: none !important;
+  border-radius:5px !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #364f2a  !important;
+}
+.ant-btn-lg {
+  border-radius: 5px !important;
+}
+.ant-card {
+  border-radius: 20px !important;
+}
+.ant-card-actions {
+  border-radius: 20px !important;
+}
+

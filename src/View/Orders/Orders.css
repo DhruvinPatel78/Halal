@@ -1,0 +1,13 @@
+.tableCustom.ant-pagination-item a {
+    margin-top: 0px;
+}
+
+.cardAction.ant-card-actions {
+    border-radius: 15px;
+    height: 60px;
+}
+
+.customBody.ant-card-body {
+    padding: 20px !important;
+
+}
