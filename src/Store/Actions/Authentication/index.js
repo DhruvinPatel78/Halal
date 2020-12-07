@@ -1,15 +1,14 @@
 import {
-    LOGIN,
     LOGIN_ERROR,
-    REGISTER,
     REGISTER_ERROR,
     LOADER_AUTH,
     GET_PROFILE_DATA_ERROR,
     GET_PROFILE_DATA,
     ADD_PROFILE_DATA,
-    ADD_PROFILE_DATA_ERROR, UPDATE_STORE_STATUS, UPDATE_STORE_STATUS_ERROR
+    ADD_PROFILE_DATA_ERROR,
+    UPDATE_STORE_STATUS_ERROR
 } from "../../ActionsType/actiontypes";
-import {db,auth,user} from "../../../firebase";
+import {db,auth} from "../../../firebase";
 import {message} from "antd";
 
 export const login = (email,password, callBack) => {
@@ -83,7 +82,6 @@ export const getProfileData = () => {
 export const updatePassword = (newPassword) => {
     return (dispatch) => {
         dispatch({ type: LOADER_AUTH ,payload:true });
-        const email = localStorage.getItem('email')
         auth.currentUser.updatePassword(newPassword).then((res) => {
             console.log("response",res)
             dispatch({ type: LOADER_AUTH ,payload:false });

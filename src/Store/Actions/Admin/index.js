@@ -1,14 +1,15 @@
 import {
     GET_ALL_USERS,
-    GET_ALL_USERS_ERROR, GET_ALL_VENDORS, GET_ALL_VENDORS_ERROR,
+    GET_ALL_USERS_ERROR,
+    GET_ALL_VENDORS,
+    GET_ALL_VENDORS_ERROR,
     LOADER_AUTH,
-    ADD_PROFILE_DATA, ADD_PROFILE_DATA_ERROR,
-    ADD_VENDOR,
-    ADD_VENDOR_ERROR, GET_ALL_ORDERS, GET_ALL_ORDERS_ERROR, GET_PROFILE_DATA_ERROR
+    ADD_VENDOR_ERROR,
+    GET_ALL_ORDERS,
+    GET_ALL_ORDERS_ERROR
 } from "../../ActionsType/actiontypes";
-import {db,auth} from "../../../firebase";
+import {db} from "../../../firebase";
 import {message} from "antd";
-import {getStockByVendor} from "../Orders";
 
 export const getAllUsers = () => {
     return (dispatch) => {

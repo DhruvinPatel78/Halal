@@ -14,7 +14,6 @@ const EditStock = (props) => {
     const [cowShare, setCowShare] = useState(stockByVendor.CowShare)
     const [cowShareCost, setCowShareCost] = useState(stockByVendor.CowShareCost)
     const dispatch = useDispatch();
-    const [loader,setLoader] = useState(false);
 
     const updateStock = () => {
         dispatch(updateStockDetails({

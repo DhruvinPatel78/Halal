@@ -2,20 +2,19 @@ import React, {useEffect, useState} from "react";
 import {Card,Typography,Table,Spin,Select,Tag} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import {getOrderByVendor,updateOrderStatus} from "../../Store/Actions/Orders";
-import moment from "moment";
+
 const {Title} = Typography
 const { Option } = Select;
 const VendorOrders = () => {
     const [orderByVendor, setOrderByVendor] = useState(undefined);
     const [orderId, setOrderId] = useState([]);
-    const [completeDisable, setCompleteDisable] = useState(true);
-    const [processDisable, setProcessDisable] = useState(true);
     const dispatch = useDispatch();
-    const {vendorOrder,loading,error} = useSelector(state => state.ordersReducer)
+    const {vendorOrder,loading} = useSelector(state => state.ordersReducer)
     const [loader,setLoader] = useState(false);
 
     useEffect(() => {
         dispatch(getOrderByVendor());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(() => {
        if(vendorOrder){
@@ -98,7 +97,6 @@ const VendorOrders = () => {
             title: 'Action',
             render:(data,_,index) => {
                 console.log(data.Status)
-                data.Status === 'pending' ?  setProcessDisable(false) : setCompleteDisable(false)
                 return (
                     <>
                         { data.Status !== 'complete' ? <Select defaultValue="select" style={{ width: 140 }} onChange={(value) =>

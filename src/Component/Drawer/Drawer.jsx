@@ -1,6 +1,6 @@
 import React from "react";
-import {Card, Drawer, Tag, Typography} from 'antd';
-const { Title,Text } = Typography;
+import {Card, Drawer, Typography} from 'antd';
+const { Title } = Typography;
 
 
 const CustomDrawer = (props) => (

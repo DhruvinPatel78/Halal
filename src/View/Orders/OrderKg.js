@@ -9,7 +9,7 @@ const OrderKg = (props) => {
     const [cow,setCow] = useState("");
     const [goat,setGoat] = useState("");
     const dispatch = useDispatch();
-    const {loading,error} = useSelector(state => state.ordersReducer);
+    const {loading} = useSelector(state => state.ordersReducer);
 
     const [loader,setLoader] = useState(false);
     const onSubmitHandler = () => {

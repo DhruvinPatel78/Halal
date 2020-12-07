@@ -19,7 +19,7 @@ const UserProfile = () => {
     const dispatch = useDispatch();
     const [enableEdit,setEnableEdit] = useState(false)
     const [profileState, setProfileState] = useState({});
-    const {loading, profileData, exist,profileSuccess,storeStatus} = useSelector(state => state.authenticationReducer)
+    const {loading, profileData, exist} = useSelector(state => state.authenticationReducer)
     const [loader, setLoader] = useState(false)
     const [name,setName] = useState("")
     const [address,setAddress] = useState("")
@@ -31,7 +31,9 @@ const UserProfile = () => {
     const type = localStorage.getItem('type')
     useEffect(() => {
         getProfilesData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+
     useEffect(() => {
         if(profileData) {
             setProfileState(profileData)
@@ -83,7 +85,7 @@ const UserProfile = () => {
             /></>
         }>
 
-                <img src={Logo} height={150} width={150} style={{marginTop:"-100px",marginBottom:"30px"}}/>
+                <img src={Logo} alt={"logo"} height={150} width={150} style={{marginTop:"-100px",marginBottom:"30px"}}/>
 
         {!enableEdit ?  <>
             <p><Text strong>Email - </Text> {email}</p>

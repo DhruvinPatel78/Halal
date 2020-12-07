@@ -1,5 +1,5 @@
 import React from "react";
-import {Timeline, Card, Table} from 'antd';
+import {Timeline, Card} from 'antd';
 import {MobileOutlined,SendOutlined,GlobalOutlined,InstagramOutlined} from "@ant-design/icons";
 import "../Home/Home.css"
 

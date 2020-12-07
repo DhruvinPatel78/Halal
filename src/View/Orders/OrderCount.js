@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {Button, Form, Input, InputNumber, message, Spin} from "antd";
+import {Button, Form, InputNumber, message, Spin} from "antd";
 import {useDispatch, useSelector} from "react-redux";
-import {addOrder, getStockDetails, orderDetails} from "../../Store/Actions/Orders";
+import {getStockDetails, orderDetails} from "../../Store/Actions/Orders";
 import {PlusCircleOutlined,MinusCircleOutlined} from "@ant-design/icons/lib";
 import Text from "antd/es/typography/Text";
 
@@ -14,10 +14,11 @@ const OrderCount = (props) => {
     const dispatch = useDispatch();
     const {stockDetail} = useSelector(state => state.ordersReducer);
     const [loader,setLoader] = useState(false);
-    console.log("PROPS",props)
+
     useEffect(() => {
         setLoader(true)
         dispatch(getStockDetails(props.email))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(() => {
         if(stockDetail) {

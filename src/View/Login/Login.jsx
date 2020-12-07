@@ -88,7 +88,7 @@ const Login = () => {
                 <div className="overlay-container">
                     <div className="overlay">
                         <div className="overlay-panel overlay-right">
-                            <img src={LoginLogo} height={150} width={150} style={{marginBottom:"20px"}}/>
+                            <img src={LoginLogo} alt={"Logo"} height={150} width={150} style={{marginBottom:"20px"}}/>
                             <p style={{fontSize:"20px",fontWeight:"bold"}}>Ordering Halal, Made "EASY"</p>
                             <button className="buttonClass ghost" id="signUp" onClick={signUp}>Sign Up</button>
                         </div>

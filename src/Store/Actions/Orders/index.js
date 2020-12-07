@@ -6,7 +6,8 @@ import {
     GET_ORDER_BY_VENDOR,
     GET_ORDER_BY_VENDOR_ERROR,
     GET_ORDER_HISTORY,
-    GET_ORDER_HISTORY_ERROR, GET_PROFILE_DATA, GET_PROFILE_DATA_ERROR,
+    GET_ORDER_HISTORY_ERROR,
+    GET_PROFILE_DATA_ERROR,
     GET_STOCK,
     GET_STOCK_ERROR,
     GET_VENDOR_STOCK,
@@ -137,7 +138,6 @@ export const updateOrderStatus = (status, orderId,lamb,cow,goat,cowShare) => {
 
     return (dispatch) => {
         dispatch({type: LOADER_AUTH, payload: true});
-        const email = localStorage.getItem('email')
         db.collection("Order")
             .doc(orderId)
             .update({

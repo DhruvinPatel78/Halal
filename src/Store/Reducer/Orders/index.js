@@ -77,13 +77,6 @@ export const ordersReducer = (state = initialOrdersState, action) => {
             }
         }
         case GET_ORDER_BY_VENDOR: {
-            const vendorData = action.payload.map(changes => {
-               return  changes.doc.data()
-            })
-
-            const vendorId = action.payload.map(changes => {
-                return  changes.doc.id
-            })
             return {
                 ...state,
                 vendorOrder: action.payload

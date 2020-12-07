@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Card,Typography,Table,Spin,Button} from "antd";
 import {useDispatch, useSelector} from "react-redux";
-import {getOrderByVendor,getStockByVendor} from "../../Store/Actions/Orders";
+import {getStockByVendor} from "../../Store/Actions/Orders";
 import CustomDrawer from "../../Component/Drawer/Drawer";
 import EditStock from "./EditStock";
 const {Title} = Typography
@@ -9,13 +9,14 @@ const {Title} = Typography
 const VendorStock = (props) => {
     const [stockByVendor, setStockByVendor] = useState([]);
     const dispatch = useDispatch();
-    const {vendorStock,loading,error} = useSelector(state => state.ordersReducer)
+    const {vendorStock,loading} = useSelector(state => state.ordersReducer)
     const [loader,setLoader] = useState(false);
     const [drawer, setDrawer] = useState(false);
 
     console.log("orderOFvendors",stockByVendor);
     useEffect(() => {
         dispatch(getStockByVendor());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     useEffect(() => {
         if(vendorStock){

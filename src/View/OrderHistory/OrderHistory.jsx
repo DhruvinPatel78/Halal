@@ -4,11 +4,11 @@ import "../Home/Home.css"
 import {useDispatch, useSelector} from "react-redux";
 import {getOrdersHistory} from "../../Store/Actions/Orders";
 const { TabPane } = Tabs;
-const { Title,Text } = Typography;
+const { Title } = Typography;
 
 const OrderHistory = () => {
     const dispatch = useDispatch()
-    const {orderHistory,loading,error} = useSelector(state => state.ordersReducer);
+    const {orderHistory,loading} = useSelector(state => state.ordersReducer);
     const [orderState,setOrderState] = useState([]);
     const [tabActive,setTabActive] = useState("all");
     const [loader,setLoader] = useState(false);
@@ -27,6 +27,7 @@ const OrderHistory = () => {
 
     useEffect(() => {
         dispatch(getOrdersHistory())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[tabActive])
 
     const columns = [

@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 const AllOrders = () => {
     const dispatch = useDispatch()
-    const {all_orders,loading,error} = useSelector(state => state.adminReducer);
+    const {all_orders,loading} = useSelector(state => state.adminReducer);
     const [loader,setLoader] = useState(false);
     const [orderState,setOrderState] = useState([]);
     const columns = [
@@ -76,7 +76,9 @@ const AllOrders = () => {
     ];
     useEffect(() => {
         dispatch(getAllOrders())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+
     useEffect(() => {
         if(all_orders) {
             setOrderState(all_orders.map(changes => {

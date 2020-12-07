@@ -7,43 +7,13 @@ import {ShopOutlined} from "@ant-design/icons/lib";
 import '../Home/Home.css'
 import CustomDrawer from "../../Component/Drawer/Drawer";
 import OrderCount from "./OrderCount";
-import OrderKg from "./OrderKg";
 import OrderLbs from "./OrderLbs";
 import VerifyOrder from "./VerifyOrder";
 const { Title,Text } = Typography;
 
-const columns = [
-    {
-        title: 'Store Name',
-        dataIndex: 'StoreName',
-        key: 'StoreName',
-    },
-    {
-        title: 'Stock Type',
-        dataIndex: 'StockType',
-        key: 'StockType',
-    },
-    {
-        title: 'Address',
-        dataIndex: 'Address',
-        key: 'Address',
-    },
-    {
-        title: 'Contact',
-        dataIndex: 'Contact',
-        key: 'Contact',
-    },
-    {
-        title: 'Distance',
-        dataIndex: 'Contact',
-        key: 'Contact',
-    },
-
-];
-
 const Orders = () => {
     const dispatch = useDispatch();
-    const {vendors,loading,error} = useSelector(state => state.ordersReducer)
+    const {vendors,loading} = useSelector(state => state.ordersReducer)
     const [vendorState,setVendorsState] = useState([]);
     const [loader,setLoader] = useState(false);
     const [contentType, setContentType] = useState(undefined);
@@ -52,6 +22,7 @@ const Orders = () => {
     const [docId, setDocId] = useState(undefined);
     useEffect(() => {
         dispatch(getAllActiveVendors())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     useEffect(() => {

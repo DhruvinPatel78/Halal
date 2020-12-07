@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {registration,addProfileData} from "../../Store/Actions/Authentication";
 import {message, Form} from "antd";
 import {LoadingOutlined} from "@ant-design/icons";
-import SignUpLogo from '../../Common/image/Lettermark_White.png'
 import LoginLogo from "../../Common/image/Lettermark_White.png";
 const Register = () => {
 
@@ -118,7 +117,7 @@ const Register = () => {
                 <div className="overlay-container">
                     <div className="overlay">
                         <div className="overlay-panel overlay-right">
-                            <img src={LoginLogo} height={150} width={150} style={{marginBottom:"20px"}}/>
+                            <img src={LoginLogo} height={150} alt={"Logo"} width={150} style={{marginBottom:"20px"}}/>
                             <p style={{fontSize:"20px",fontWeight:"bold"}}>The act of giving, made "EASY" </p>
                             <button className="ghost buttonRegister" id="signUp" onClick={() => history.push("/login")}>Sign In
                             </button>

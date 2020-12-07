@@ -1,11 +1,9 @@
 import React,{useEffect} from 'react'
 import {message} from "antd";
-import {useHistory} from "react-router";
 
 const PayPal = (props) => {
     const paypalRef = React.useRef();
     const  {totalAmount,addOrders} = props
-    const history = useHistory()
     useEffect(() => {
         window.paypal
             .Buttons({
@@ -39,6 +37,7 @@ const PayPal = (props) => {
                 },
             })
             .render(paypalRef.current)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
 

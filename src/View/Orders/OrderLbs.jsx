@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Form, Input, Button, message, Spin} from 'antd';
-import {addOrder,getStockDetails,orderDetails,cancelOrder} from "../../Store/Actions/Orders";
+import {orderDetails,cancelOrder} from "../../Store/Actions/Orders";
 import {useDispatch, useSelector} from "react-redux";
 import Text from "antd/es/typography/Text";
 

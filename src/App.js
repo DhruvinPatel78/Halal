@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {BrowserRouter, Switch, Link, Route, useHistory, Redirect} from "react-router-dom";
+import {Switch, Link, useHistory, Redirect} from "react-router-dom";
 import Login from "./View/Login/Login";
 import Register from "./View/Registration/Registration";
 import PrivateRoute from "./Routing/PrivateRoute";
 import PublicRoute from "./Routing/PublicRoute";
 import Home from "./View/Home/Home";
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import UserProfile from "./View/UserProfile/UserProfile";
 import Orders from "./View/Orders/Orders";
 import OrderHistory from "./View/OrderHistory/OrderHistory";
@@ -25,7 +25,7 @@ import {
     UnorderedListOutlined,
     StockOutlined
 } from '@ant-design/icons';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {logout} from "./Store/Actions/Authentication";
 import AllOrders from "./View/Admin/AllOrders/AllOrders";
 import VendorOrders from "./View/Vendor/VendorOrder";
@@ -35,8 +35,6 @@ const { Header, Content, Sider } = Layout;
 const App = () => {
     const [collapsed, setCollapsed] = useState(false)
     const dispatch = useDispatch();
-    const [loader, setLoader] = useState(false)
-    const { loading } = useSelector(state => state.authenticationReducer)
     const type = localStorage.getItem('type')
     const history = useHistory();
     const onCollapse = collapsed => {
@@ -51,10 +49,6 @@ const App = () => {
             history.push('/login')
         }))
     }
-    useEffect(() => {
-        setLoader(loading)
-    },[loading])
-
 
 
   return (
@@ -73,6 +67,7 @@ const App = () => {
                             width={168}
                             height={50}
                             src={halalLogo}
+                            alt={"logo"}
                         /></Link>
                         </h1>
                     </Header>
